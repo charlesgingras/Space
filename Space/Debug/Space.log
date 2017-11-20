@@ -1,0 +1,6 @@
+﻿  Controller.cpp
+c:\users\charles\source\repos\space\space\projectile.h(20): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\charles\source\repos\space\space\projectile.h(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\charles\source\repos\space\space\controller.cpp(60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\charles\source\repos\space\space\controller.cpp(94): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Space.vcxproj -> C:\Users\charles\source\repos\Space\Debug\Space.exe

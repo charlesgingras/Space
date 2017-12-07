@@ -1,0 +1,3 @@
+﻿  AmmunitionShot.cpp
+c:\users\charles\source\repos\space\space\ammunitionshot.cpp(42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Space.vcxproj -> C:\Users\charles\source\repos\Space\Debug\Space.exe

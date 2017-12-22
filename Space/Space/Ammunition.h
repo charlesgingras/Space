@@ -20,10 +20,12 @@ public:
 	//Ammunition(const Ammunition&);
 	Ammunition();
 	void reload();
+	int32_t aDelay = 0;
 	virtual Projectile* consume(sf::Vector2f pCurPos);
 	//virtual void update();
 	//virtual void update(sf::Vector2f pPos);
-	//virtual sf::Vector2f getPosition();	
+	//virtual sf::Vector2f getPosition();
+	virtual int32_t getDelay();
 	int getDamage();
 
 };
@@ -36,6 +38,7 @@ private:
 public:
 	RegBullet();
 	Projectile* consume(sf::Vector2f pCurPos);
+	int32_t getDelay();
 	//sf::Vector2f getPosition();
 	//void update();
 	//void update(sf::Vector2f pPos);

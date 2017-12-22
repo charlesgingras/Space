@@ -21,6 +21,7 @@ Projectile* Ammunition::consume(sf::Vector2f pCurPos)
 	return new Projectile((allTextures->getTexture()), 0, aDamage, speed, pCurPos);
 
 }
+
 //void Ammunition::update()
 //{
 //	aAmmunition.move(speed, 0);
@@ -37,9 +38,13 @@ int Ammunition::getDamage()
 {
 	return aDamage;
 }
-
+int32_t Ammunition::getDelay()
+{
+	return aDelay;
+}
 RegBullet::RegBullet()
 {
+	aDelay = 500;
 	aName = "regShot";
 	aDamage = 5;
 	maxAmmo = 1;
@@ -48,6 +53,7 @@ RegBullet::RegBullet()
 }
 RegBullet::RegBullet(const RegBullet& pThis)
 {
+	aDelay = 500;
 	aName = "regShot";
 	aDamage = 5;
 	maxAmmo = 1;
@@ -57,6 +63,10 @@ RegBullet::RegBullet(const RegBullet& pThis)
 Projectile* RegBullet::consume(sf::Vector2f pCurPos)
 {
 	return new Projectile((allTextures->getTexture()), 0, aDamage, speed, pCurPos);	
+}
+int32_t RegBullet::getDelay()
+{
+	return aDelay;
 }
 //sf::Vector2f RegBullet::getPosition()
 //{

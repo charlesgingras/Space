@@ -32,9 +32,14 @@ void Controller::draw()
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
-		Projectile* tmp = aPlayer->shoot();
-		aProjectiles->addShot(tmp);
-		aWindow->draw(tmp->getProjectile());
+		if (aPlayer->getAmmoPtr()->getDelay() < dtAsSeconds)
+		{
+			Projectile* tmp = aPlayer->shoot();
+			aProjectiles->addShot(tmp);
+			aWindow->draw(tmp->getProjectile());
+			dtAsSeconds = 0;
+		}
+		
 	}
 	aWindow->draw(aPlayer->getShip());
 	aWindow->display();
@@ -55,15 +60,18 @@ void Controller::start()
 	aPlayer = &someShip;
 	AmmunitionShot someProjectiles = AmmunitionShot::getInstance();
 	aProjectiles = &someProjectiles;
-
+	clock.restart();
 	while (aWindow->isOpen())
 	{
+
 		sf::Event event;
 		while (aWindow->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				aWindow->close();
 		}
+		dt = clock.restart();
+		dtAsSeconds += dt.asMilliseconds();
 		this->draw();
 	}
 	//clean();

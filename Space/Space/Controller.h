@@ -2,6 +2,7 @@
 #include "spaceShip.h"
 #include "TextureRefs.h"
 #include "AmmunitionShot.h"
+#include "stdafx.h"
 
 class Controller
 {
@@ -17,6 +18,10 @@ private:
 	int aWindowHeight = 720;
 	sf::RenderWindow* aWindow;
 	void draw();
+	sf::Clock clock;
+	sf::Time dt;
+	int32_t dtAsSeconds;
+
 
 	
 public:

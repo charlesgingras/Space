@@ -58,5 +58,9 @@
 		return ammoPtr->consume(shipPosition);
 		 
 	}
+	Ammunition* spaceShip::getAmmoPtr()
+	{
+		return ammoPtr;
+	}
 
 

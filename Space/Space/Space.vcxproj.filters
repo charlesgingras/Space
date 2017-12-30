@@ -21,9 +21,6 @@
     <ClCompile Include="Ammunition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="spaceShip.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="AmmunitionShot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -39,15 +36,15 @@
     <ClCompile Include="Projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SpaceShip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="spaceShip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ammunition.h">
@@ -63,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Projectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpaceShip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

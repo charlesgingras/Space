@@ -28,4 +28,5 @@ public:
 	sf::Vector2f getPosition();
 	sf::Sprite getShip();
 	spaceShip(float pPosition);
+	Ammunition* getAmmoPtr();
 };

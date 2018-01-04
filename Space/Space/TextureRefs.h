@@ -1,6 +1,5 @@
 #pragma once
 #include <stdio.h>
-#include <unordered_map>
 #include <TGUI/TGUI.hpp>
 //bg: 0,0 -> 1143,865
 //space ship:7,870 -> 725, 1597
@@ -14,9 +13,9 @@ private:
 		allTextures.loadFromFile("TextureCollage.png");
 	};
 public:
-	static TextureRefs& getTextRefs()
+	static std::shared_ptr<TextureRefs>& getTextRefs()
 	{
-		static TextureRefs INSTANCE;
+		static std::shared_ptr<TextureRefs> INSTANCE{ new TextureRefs };
 		return INSTANCE;
 	}
 	sf::Texture* getTexture()

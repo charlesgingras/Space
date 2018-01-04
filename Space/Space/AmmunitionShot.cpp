@@ -33,7 +33,7 @@ void AmmunitionShot::update(sf::RenderWindow* pWindow)
 }
 /*Determines if a collision occured between aPlayer and some Projectile;
 may need to be modified/optimized for checking collisions on multiple spaceShip instances*/
-void AmmunitionShot::calcCollisions(SpaceShip* aPlayer)
+void AmmunitionShot::calcCollisions(std::shared_ptr<SpaceObjects> aPlayer)
 {
 	sf::Vector2f sp = aPlayer->getPosition();
 	std::vector<Projectile*> copy = shotsFired;
@@ -41,13 +41,17 @@ void AmmunitionShot::calcCollisions(SpaceShip* aPlayer)
 	//check for error at end of list
 	for (std::vector<Projectile*>::iterator cur = copy.begin(); cur != copy.end(); ++cur)
 	{
-		(*cur)->update();
 		sf::Vector2f pp = (*cur)->getPosition();
-		float distance = sqrtf(pow((pp.x - sp.x), 2.0) + pow((pp.y - sp.y), 2.0));
-		if (distance < 5.0)
+		/*float distance = sqrtf(pow((pp.x - sp.x), 2.0) + pow((pp.y - sp.y), 2.0));
+		if (distance < 5.0)*/
+		if ( aPlayer->getShip().getGlobalBounds().intersects((*cur)->getProjectile().getGlobalBounds())) //TO clean
 		{
-			aPlayer->getHit((*cur)->getDamage());
+			int remainder = aPlayer->getHit((*cur)->getDamage());
 			removeShot(*cur);
+			if (remainder <= 0)
+			{
+				throw - 1;
+			}
 			
 		}
 	}

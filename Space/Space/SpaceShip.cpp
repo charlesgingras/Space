@@ -1,5 +1,13 @@
 #include "SpaceShip.h"
 
+	SpaceObjects::SpaceObjects(float pSpeed, int sx, int sy, int ex, int ey, int hp)
+	{
+		aSpeed = pSpeed;
+		aHealth = hp;
+		aShip.setTextureRect(sf::IntRect(sx, sy, ex, ey));
+		aShip.setTexture(*(allTextures->getTexture()), false);
+
+	}
 	/*param pPosition: starting vertical position of spaceShip object*/
 	SpaceShip::SpaceShip(float pPosition)
 	{
@@ -38,13 +46,10 @@
 		ammoPtr = aAmmo[pIndex];
 	}
 	/*Take damage: called when object is hit by a Projectile*/
-	void SpaceObjects::getHit(int pDamage)
+	int SpaceObjects::getHit(int pDamage)
 	{
 		aHealth -= pDamage;
-		if (aHealth < 0)
-		{
-			//TODO
-		}
+		return aHealth;
 	}
 	/*Returns a Vector2f giving the position of the spaceShip object*/
 	sf::Vector2f SpaceObjects::getPosition()
@@ -72,14 +77,10 @@
 	}
 	/*@param: pX, pY represent the X and Y positions of the asteroid
 			  size is a ratio of 0 to 1 to determine the size of the sprite*/
-	Asteroid::Asteroid(float pX, float pY, float size)
+	Asteroid::Asteroid(float pX, float pY, float size):
+		SpaceObjects(0.1f, 1149, 0, 1565, 390, 1)
 	{
-		aSpeed = 0.1f; 
-		aHealth = 1;
-		aShip.setTextureRect(sf::IntRect(1149, 0, 1565, 390));
-		aShip.setTexture(*(allTextures->getTexture()), false);
-		aShip.setScale(size, size);
+		aShip.setScale(0.1*size, 0.1*size);
 		aShip.setPosition(pX, pY);
 	}
-
 

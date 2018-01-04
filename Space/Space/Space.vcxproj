@@ -124,14 +124,15 @@
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="SpaceShip.cpp" />
+    <ClCompile Include="SpaceShipObserver.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="TextureRefs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ammunition.h" />
     <ClInclude Include="AmmunitionShot.h" />
     <ClInclude Include="Controller.h" />
     <ClInclude Include="Projectile.h" />
+    <ClInclude Include="SpaceObjectObserver.h" />
     <ClInclude Include="SpaceShip.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

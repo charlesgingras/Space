@@ -20,7 +20,7 @@ public:
 	static AmmunitionShot& getInstance();
 	AmmunitionShot& operator=(const AmmunitionShot&) = delete;
 	void update(sf::RenderWindow* pWindow);
-	void AmmunitionShot::calcCollisions(SpaceShip* aPlayer);
+	void AmmunitionShot::calcCollisions(std::shared_ptr<SpaceObjects> aPlayer);
 	void addShot(Projectile* pShot);
 	void removeShot(Projectile* pShot);
 	

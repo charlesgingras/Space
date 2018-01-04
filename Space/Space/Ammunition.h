@@ -8,7 +8,7 @@ shooting causes ammunition to be decremented and creates a Projectile with an ac
 class Ammunition
 {
 protected:
-	TextureRefs* allTextures = &(TextureRefs::getTextRefs());
+	std::shared_ptr<TextureRefs> allTextures = TextureRefs::getTextRefs();
 	int ammountLeft;
 	int maxAmmo;
 	int32_t aDelay;

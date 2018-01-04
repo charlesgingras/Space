@@ -1,15 +1,7 @@
 ﻿  Controller.cpp
-c:\users\charles\source\repos\space\space\controller.cpp(70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\charles\source\repos\space\space\controller.cpp(72): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\charles\source\repos\space\space\controller.cpp(96): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  AmmunitionShot.cpp
-c:\users\charles\source\repos\space\space\ammunitionshot.cpp(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-  Compiling...
-  SpaceShip.cpp
-c:\users\charles\source\repos\space\space\spaceship.cpp(8): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\charles\source\repos\space\space\spaceship.cpp(26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\charles\source\repos\space\space\spaceship.cpp(33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  Source.cpp
-  Generating Code...
+c:\users\charles\source\repos\space\space\controller.h(18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\charles\source\repos\space\space\controller.cpp(46): warning C4101: 'e': unreferenced local variable
+c:\users\charles\source\repos\space\space\controller.cpp(77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\charles\source\repos\space\space\controller.cpp(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\charles\source\repos\space\space\controller.cpp(125): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Space.vcxproj -> C:\Users\charles\source\repos\Space\Debug\Space.exe

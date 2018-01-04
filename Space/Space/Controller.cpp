@@ -42,7 +42,14 @@ void Controller::draw()
 		}
 		
 	}
+	try { aProjectiles->calcCollisions(aPlayer); }
+	catch (int e)
+	{
+		return;
+	}
+	aSpaceObjects->displayAll(aProjectiles, aWindow);
 	aWindow->draw(aPlayer->getShip());
+	
 	aWindow->display();
 }
 
@@ -93,10 +100,13 @@ void Controller::start()
 	sf::RenderWindow someWindow(sf::VideoMode(aWindowWidth, aWindowHeight), "Space Invaders");
 	aWindow = &someWindow;
 	mainMenu();
-	SpaceShip someShip = SpaceShip(aWindowHeight / 2.0);
-	aPlayer = &someShip;
-	AmmunitionShot someProjectiles = AmmunitionShot::getInstance();
-	aProjectiles = &someProjectiles;
+	
+	//AmmunitionShot someProjectiles = AmmunitionShot::getInstance();
+	//aProjectiles = &someProjectiles;
+	aSpaceObjects = &(SpaceObjectObserver::getSpaceObjectObserver());
+	aProjectiles = &(AmmunitionShot::getInstance());
+	dtAsSeconds = 0;
+	prev_dtAsSeconds = 0;
 	clock.restart();
 	while (aWindow->isOpen())
 	{
@@ -108,7 +118,13 @@ void Controller::start()
 				aWindow->close();
 		}
 		dt = clock.restart();
+		prev_dtAsSeconds = dtAsSeconds;
 		dtAsSeconds += dt.asMilliseconds();
+		if (prev_dtAsSeconds / 500 < dtAsSeconds / 500)
+		{
+			std::shared_ptr<SpaceObjects> tmp(new Asteroid(aWindowWidth, dtAsSeconds%aWindowHeight, 1)); //to modify
+			aSpaceObjects->addObjects(tmp);
+		}
 		this->draw();
 	}
 	//clean();
